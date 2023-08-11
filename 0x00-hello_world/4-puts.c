@@ -2,10 +2,12 @@
 /**
  * main - Entry point
  *
- * Return: Always 0 (succes)
+ * Return: Always 0 (Succes)
  */
-int main (void) {
-	puts("Programming is like building a multilingual puzzle\n");
+int main(void)
+{
+
+	puts("\"Programming is like building a multilingual puzzle\n");
 	return (0);
 }
 
