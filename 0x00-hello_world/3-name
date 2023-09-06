@@ -1,3 +1,2 @@
 #! /bin/bash
-touch cisfun
-chmod u+x cisfun
+touch cisfun && chmod u+x cisfun
