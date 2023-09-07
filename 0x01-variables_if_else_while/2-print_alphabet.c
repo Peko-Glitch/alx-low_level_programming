@@ -1,17 +1,22 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
- * main - Entry point
+ * main -Entry point
  *
- * Return: Always 0
+ * Return: always 0
  */
 int main(void)
 {
-	char ch;
+	int ch;
 
-	while ((ch = getchar()))
+	while ((ch = getchar()) != EOF)
 	{
+		if (ch == '\n')
+		{
+
+		}
 		putchar(tolower(ch));
+		fflush(stdout);
 	}
 
 	return (0);
