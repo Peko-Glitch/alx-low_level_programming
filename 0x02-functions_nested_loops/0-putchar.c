@@ -7,8 +7,9 @@
 int main(void)
 {
 	char mystring[] = "_putchar";
+	int i;
 
-	for (int i = 0; mystring[i]; i++)
+	for (i = 0; mystring[i]; i++)
 	{
 		putchar(mystring[i]);
 	}
