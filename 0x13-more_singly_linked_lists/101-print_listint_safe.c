@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -10,24 +10,30 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t node_count = 0;
-	const listint_t *current = head;
-	const listint_t *check = head;
+    size_t node_count = 0;
+    const listint_t *tortoise = head;
+    const listint_t *hare = head;
 
-	while (current != NULL)
-	{
-		printf("[%p] %d\n", (void *)current, current->n);
-		node_count++;
+    while (hare != NULL && hare->next != NULL)
+    {
+        printf("[%p] %d\n", (void *)tortoise, tortoise->n);
+        node_count++;
+        tortoise = tortoise->next;
+        hare = hare->next->next;
 
-		current = current->next;
+        if (tortoise == hare)
+        {
+            printf("-> [%p] %d\n", (void *)tortoise, tortoise->n);
+            exit(98);
+        }
+    }
 
-		if (current >= check)
-		{
-			printf("-> [%p] %d\n", (void *)current, current->n);
-			exit(98);
-		}
-	}
+    if (hare != NULL)
+    {
+        printf("[%p] %d\n", (void *)tortoise, tortoise->n);
+        node_count++;
+    }
 
-    return (node_count);
+    return node_count;
 }
 
